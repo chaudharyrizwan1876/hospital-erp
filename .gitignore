@@ -7,8 +7,6 @@ out
 *.tsbuildinfo
 
 # environment variables (contains DB credentials — never commit)
-.env
-.env.local
 .env.*.local
 
 # logs
@@ -20,9 +18,9 @@ npm-debug.log*
 Thumbs.db
 
 # editor
-.vscode
 .idea
 
 # misc
 *.rar
 *.zip
+config.bat
