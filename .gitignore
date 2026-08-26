@@ -7,8 +7,6 @@ out
 *.tsbuildinfo
 
 # environment variables (contains DB credentials — never commit)
-.env
-.env.local
 .env.*.local
 
 # logs
@@ -26,3 +24,4 @@ Thumbs.db
 # misc
 *.rar
 *.zip
+config.bat
