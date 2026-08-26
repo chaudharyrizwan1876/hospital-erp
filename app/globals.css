@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+/* ============ DARK MODE ============ */
+html.dark body {
+  background-color: #0b1220;
+  color: #e2e8f0;
+}
+
+/* Structural surfaces */
+html.dark .card {
+  background-color: #1e293b;
+  border-color: #334155;
+}
+html.dark aside,
+html.dark header {
+  background-color: #111827 !important;
+  border-color: #1f2937 !important;
+}
+
+/* Common background utilities */
+html.dark .bg-white {
+  background-color: #1e293b;
+}
+html.dark .bg-slate-50 {
+  background-color: #0f172a;
+}
+html.dark .bg-slate-100 {
+  background-color: #1e293b;
+}
+
+/* Text utilities */
+html.dark .text-slate-900 {
+  color: #f1f5f9;
+}
+html.dark .text-slate-800 {
+  color: #e2e8f0;
+}
+html.dark .text-slate-700,
+html.dark .text-slate-600 {
+  color: #cbd5e1;
+}
+html.dark .text-slate-500 {
+  color: #94a3b8;
+}
+html.dark .text-slate-400 {
+  color: #64748b;
+}
+
+/* Borders & dividers */
+html.dark .border-slate-200,
+html.dark .border-slate-300,
+html.dark .border-slate-100 {
+  border-color: #334155;
+}
+html.dark .divide-slate-200 > :not([hidden]) ~ :not([hidden]),
+html.dark .divide-slate-100 > :not([hidden]) ~ :not([hidden]) {
+  border-color: #334155;
+}
+
+/* Hover states */
+html.dark .hover\:bg-slate-50:hover {
+  background-color: #334155;
+}
+
+/* Form inputs */
+html.dark .input {
+  background-color: #0f172a;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+html.dark .input::placeholder {
+  color: #64748b;
+}
+html.dark .btn-ghost {
+  background-color: #1e293b;
+  border-color: #334155;
+  color: #cbd5e1;
+}
+
+/* ============ PRINT / PDF (invoice & ledger) ============ */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable,
+  #printable * {
+    visibility: visible;
+  }
+  #printable {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* Reusable UI primitives */
+@layer components {
+  .card {
+    @apply bg-white rounded-xl border border-slate-200 shadow-sm;
+  }
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-lg bg-brand-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-brand-700 disabled:opacity-50;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-50;
+  }
+  .input {
+    @apply w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-100;
+  }
+  .label {
+    @apply mb-1 block text-sm font-medium text-slate-700;
+  }
+  .th {
+    @apply px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-500;
+  }
+  .td {
+    @apply px-4 py-3 text-sm text-slate-700;
+  }
+  .badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
+}

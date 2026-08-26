@@ -1,0 +1,28 @@
+# dependencies
+node_modules
+
+# next.js build output
+.next
+out
+*.tsbuildinfo
+
+# environment variables (contains DB credentials — never commit)
+.env
+.env.local
+.env.*.local
+
+# logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# editor
+.vscode
+.idea
+
+# misc
+*.rar
+*.zip
